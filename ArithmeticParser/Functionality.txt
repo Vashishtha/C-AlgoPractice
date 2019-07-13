@@ -1,0 +1,8 @@
+file contain functional class to calculate and provide result based on given input string.
+Input should be operation string on numbers.
+Given a operation string it calculate result of these operations.
+//This class only supports decimal number format 
+//and following list of operators:
+//*,/,%,+,-
+//This class only support binary operator
+//if at end or start operator is found than left rt default value to consider is 0
