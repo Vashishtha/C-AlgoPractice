@@ -1,0 +1,175 @@
+FamilyTree.cpp:19:39: error: a space is required between consecutive right angle brackets (use '> >')
+                unordered_map<string,unique_ptr<Node>> _children;
+                                                    ^~
+                                                    > >
+FamilyTree.cpp:43:34: warning: rvalue references are a C++11 extension [-Wc++11-extensions]
+                bool addSpouse(unique_ptr<Node>&& spouce)
+                                               ^
+FamilyTree.cpp:59:33: warning: rvalue references are a C++11 extension [-Wc++11-extensions]
+                bool addChild(unique_ptr<Node>&& child)
+                                              ^
+FamilyTree.cpp:112:3: warning: 'auto' type specifier is a C++11 extension [-Wc++11-extensions]
+                auto getChildrenBegin() const
+                ^
+FamilyTree.cpp:112:3: error: 'auto' not allowed in function return type
+                auto getChildrenBegin() const
+                ^~~~
+FamilyTree.cpp:117:3: warning: 'auto' type specifier is a C++11 extension [-Wc++11-extensions]
+                auto getChildrenEnd() const
+                ^
+FamilyTree.cpp:117:3: error: 'auto' not allowed in function return type
+                auto getChildrenEnd() const
+                ^~~~
+FamilyTree.cpp:69:16: error: no member named 'emplace' in 'std::__1::unordered_map<std::__1::basic_string<char>, std::__1::unique_ptr<Node, std::__1::default_delete<Node> >, std::__1::hash<std::__1::basic_string<char> >, std::__1::equal_to<std::__1::basic_string<char> >, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, std::__1::unique_ptr<Node, std::__1::default_delete<Node> > > > >'
+                                        _children.emplace(make_pair(child->_name,move(child)));
+                                        ~~~~~~~~~ ^
+FamilyTree.cpp:114:12: error: no viable conversion from returned value of type 'std::__1::unordered_map<std::__1::basic_string<char>, std::__1::unique_ptr<Node, std::__1::default_delete<Node> >, std::__1::hash<std::__1::basic_string<char> >, std::__1::equal_to<std::__1::basic_string<char> >, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, std::__1::unique_ptr<Node, std::__1::default_delete<Node> > > > >::const_iterator' (aka '__hash_map_const_iterator<__hash_const_iterator<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::unique_ptr<Node, std::__1::default_delete<Node> > >, void *> *> >') to function return type 'int'
+                        return  _children.begin();
+                                ^~~~~~~~~~~~~~~~~
+FamilyTree.cpp:119:12: error: no viable conversion from returned value of type 'std::__1::unordered_map<std::__1::basic_string<char>, std::__1::unique_ptr<Node, std::__1::default_delete<Node> >, std::__1::hash<std::__1::basic_string<char> >, std::__1::equal_to<std::__1::basic_string<char> >, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, std::__1::unique_ptr<Node, std::__1::default_delete<Node> > > > >::const_iterator' (aka '__hash_map_const_iterator<__hash_const_iterator<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::unique_ptr<Node, std::__1::default_delete<Node> > >, void *> *> >') to function return type 'int'
+                        return  _children.end();
+                                ^~~~~~~~~~~~~~~
+FamilyTree.cpp:146:9: warning: 'auto' type specifier is a C++11 extension [-Wc++11-extensions]
+                                for(auto itr = node->getChildrenBegin(); itr != node->getChildrenEnd(); itr++)
+                                    ^
+FamilyTree.cpp:157:9: warning: 'auto' type specifier is a C++11 extension [-Wc++11-extensions]
+                                for(auto itr = node->getChildrenBegin(); itr != node->getChildrenEnd(); itr++)
+                                    ^
+FamilyTree.cpp:196:4: warning: 'auto' type specifier is a C++11 extension [-Wc++11-extensions]
+                        auto node = Parental::getRelative(nodePtr);
+                        ^
+FamilyTree.cpp:216:4: warning: 'auto' type specifier is a C++11 extension [-Wc++11-extensions]
+                        auto node = Parental::getRelative(nodePtr);
+                        ^
+FamilyTree.cpp:258:4: warning: 'auto' type specifier is a C++11 extension [-Wc++11-extensions]
+                        auto node = nodePtr->getParent();
+                        ^
+FamilyTree.cpp:261:9: warning: 'auto' type specifier is a C++11 extension [-Wc++11-extensions]
+                                for(auto itr = node->getChildrenBegin(); itr != node->getChildrenEnd(); itr++)
+                                    ^
+FamilyTree.cpp:286:4: warning: 'auto' type specifier is a C++11 extension [-Wc++11-extensions]
+                        auto node = nodePtr->getSpouse() != nullptr ? nodePtr->getSpouse()->getParent() : nullptr;
+                        ^
+FamilyTree.cpp:301:27: error: expected expression
+                        RelationShips* relPtr =;
+                                               ^
+FamilyTree.cpp:322:4: warning: 'auto' type specifier is a C++11 extension [-Wc++11-extensions]
+                        auto nodePtr = relPtr->getRelative(nPtr);
+                        ^
+FamilyTree.cpp:323:4: warning: delete called on 'RelationShips' that is abstract but has non-virtual destructor [-Wdelete-non-virtual-dtor]
+                        delete relPtr;
+                        ^
+FamilyTree.cpp:393:4: warning: 'auto' type specifier is a C++11 extension [-Wc++11-extensions]
+                        auto childBeg = node->getChildrenBegin();
+                        ^
+FamilyTree.cpp:411:24: error: use of undeclared identifier 'make_unique'
+                        if(_head->addSpouse(make_unique<Node>("Queen Anga","Female")))
+                                            ^
+FamilyTree.cpp:411:36: error: 'Node' does not refer to a value
+                        if(_head->addSpouse(make_unique<Node>("Queen Anga","Female")))
+                                                        ^
+FamilyTree.cpp:13:7: note: declared here
+class Node
+      ^
+FamilyTree.cpp:411:42: warning: expression result unused [-Wunused-value]
+                        if(_head->addSpouse(make_unique<Node>("Queen Anga","Female")))
+                                                              ^~~~~~~~~~~~
+FamilyTree.cpp:431:46: error: use of undeclared identifier 'make_unique'
+                        else if(temp != nullptr && temp->addChild(make_unique<Node>(name,gender)))
+                                                                  ^
+FamilyTree.cpp:431:58: error: 'Node' does not refer to a value
+                        else if(temp != nullptr && temp->addChild(make_unique<Node>(name,gender)))
+                                                                              ^
+FamilyTree.cpp:13:7: note: declared here
+class Node
+      ^
+FamilyTree.cpp:431:64: warning: expression result unused [-Wunused-value]
+                        else if(temp != nullptr && temp->addChild(make_unique<Node>(name,gender)))
+                                                                                    ^~~~
+FamilyTree.cpp:446:42: error: use of undeclared identifier 'make_unique'
+                        if(temp != nullptr && temp->addSpouse(make_unique<Node>(name,gender)))
+                                                              ^
+FamilyTree.cpp:446:54: error: 'Node' does not refer to a value
+                        if(temp != nullptr && temp->addSpouse(make_unique<Node>(name,gender)))
+                                                                          ^
+FamilyTree.cpp:13:7: note: declared here
+class Node
+      ^
+FamilyTree.cpp:446:60: warning: expression result unused [-Wunused-value]
+                        if(temp != nullptr && temp->addSpouse(make_unique<Node>(name,gender)))
+                                                                                ^~~~
+FamilyTree.cpp:485:28: error: expected ';' at end of declaration
+        vector<string> command{istream_iterator<string>(iss), istream_iterator<string>()};
+                              ^
+                              ;
+In file included from FamilyTree.cpp:1:
+In file included from /Library/Developer/CommandLineTools/usr/include/c++/v1/string:500:
+In file included from /Library/Developer/CommandLineTools/usr/include/c++/v1/string_view:176:
+In file included from /Library/Developer/CommandLineTools/usr/include/c++/v1/__string:56:
+In file included from /Library/Developer/CommandLineTools/usr/include/c++/v1/algorithm:643:
+/Library/Developer/CommandLineTools/usr/include/c++/v1/utility:337:59: error: no matching constructor for initialization of 'std::__1::unique_ptr<Node, std::__1::default_delete<Node> >'
+    pair(_T1 const& __t1, _T2 const& __t2) : first(__t1), second(__t2) {}
+                                                          ^      ~~~~
+/Library/Developer/CommandLineTools/usr/include/c++/v1/utility:674:12: note: in instantiation of member function 'std::__1::pair<std::__1::basic_string<char>, std::__1::unique_ptr<Node, std::__1::default_delete<Node> > >::pair' requested here
+    return pair<_T1, _T2>(__x, __y);
+           ^
+FamilyTree.cpp:69:24: note: in instantiation of function template specialization 'std::__1::make_pair<std::__1::basic_string<char>, std::__1::unique_ptr<Node, std::__1::default_delete<Node> > >' requested here
+                                        _children.emplace(make_pair(child->_name,move(child)));
+                                                          ^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/memory:2532:3: note: candidate constructor not viable: 1st argument ('const std::__1::unique_ptr<Node, std::__1::default_delete<Node> >') would lose const qualifier
+  unique_ptr(unique_ptr&);
+  ^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/memory:2548:3: note: candidate constructor not viable: no known conversion from 'const std::__1::unique_ptr<Node, std::__1::default_delete<Node> >' to 'std::__1::nullptr_t' for 1st argument
+  unique_ptr(nullptr_t) : __ptr_(pointer())
+  ^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/memory:2554:12: note: candidate constructor not viable: no known conversion from 'const std::__1::unique_ptr<Node, std::__1::default_delete<Node> >' to 'std::__1::unique_ptr<Node, std::__1::default_delete<Node> >::pointer' (aka 'Node *') for 1st argument
+  explicit unique_ptr(pointer __p)
+           ^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/memory:2566:3: note: candidate constructor not viable: no known conversion from 'const std::__1::unique_ptr<Node, std::__1::default_delete<Node> >' to '__rv<std::__1::unique_ptr<Node, std::__1::default_delete<Node> > >' for 1st argument
+  unique_ptr(__rv<unique_ptr> __u)
+  ^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/memory:2533:35: note: candidate template ignored: deduced type 'unique_ptr<...>' of 1st parameter does not match adjusted type 'const unique_ptr<...>' of argument [with _Up = Node, _Ep = std::__1::default_delete<Node>]
+  template <class _Up, class _Ep> unique_ptr(unique_ptr<_Up, _Ep>&);
+                                  ^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/memory:2540:3: note: candidate constructor not viable: requires 0 arguments, but 1 was provided
+  unique_ptr() : __ptr_(pointer())
+  ^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/memory:2585:3: note: candidate constructor not viable: requires 2 arguments, but 1 was provided
+  unique_ptr(pointer __p, deleter_type __d)
+  ^
+In file included from FamilyTree.cpp:1:
+In file included from /Library/Developer/CommandLineTools/usr/include/c++/v1/string:500:
+In file included from /Library/Developer/CommandLineTools/usr/include/c++/v1/string_view:176:
+In file included from /Library/Developer/CommandLineTools/usr/include/c++/v1/__string:56:
+In file included from /Library/Developer/CommandLineTools/usr/include/c++/v1/algorithm:643:
+/Library/Developer/CommandLineTools/usr/include/c++/v1/utility:341:57: error: no matching constructor for initialization of 'std::__1::unique_ptr<Node, std::__1::default_delete<Node> >'
+    pair(const pair<_U1, _U2>& __p) : first(__p.first), second(__p.second) {}
+                                                        ^      ~~~~~~~~~~
+/Library/Developer/CommandLineTools/usr/include/c++/v1/utility:674:12: note: in instantiation of function template specialization 'std::__1::pair<std::__1::basic_string<char>, std::__1::unique_ptr<Node, std::__1::default_delete<Node> > >::pair<std::__1::basic_string<char>, std::__1::unique_ptr<Node, std::__1::default_delete<Node> > >' requested here
+    return pair<_T1, _T2>(__x, __y);
+           ^
+FamilyTree.cpp:69:24: note: in instantiation of function template specialization 'std::__1::make_pair<std::__1::basic_string<char>, std::__1::unique_ptr<Node, std::__1::default_delete<Node> > >' requested here
+                                        _children.emplace(make_pair(child->_name,move(child)));
+                                                          ^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/memory:2532:3: note: candidate constructor not viable: 1st argument ('const std::__1::unique_ptr<Node, std::__1::default_delete<Node> >') would lose const qualifier
+  unique_ptr(unique_ptr&);
+  ^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/memory:2548:3: note: candidate constructor not viable: no known conversion from 'const std::__1::unique_ptr<Node, std::__1::default_delete<Node> >' to 'std::__1::nullptr_t' for 1st argument
+  unique_ptr(nullptr_t) : __ptr_(pointer())
+  ^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/memory:2554:12: note: candidate constructor not viable: no known conversion from 'const std::__1::unique_ptr<Node, std::__1::default_delete<Node> >' to 'std::__1::unique_ptr<Node, std::__1::default_delete<Node> >::pointer' (aka 'Node *') for 1st argument
+  explicit unique_ptr(pointer __p)
+           ^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/memory:2566:3: note: candidate constructor not viable: no known conversion from 'const std::__1::unique_ptr<Node, std::__1::default_delete<Node> >' to '__rv<std::__1::unique_ptr<Node, std::__1::default_delete<Node> > >' for 1st argument
+  unique_ptr(__rv<unique_ptr> __u)
+  ^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/memory:2533:35: note: candidate template ignored: deduced type 'unique_ptr<...>' of 1st parameter does not match adjusted type 'const unique_ptr<...>' of argument [with _Up = Node, _Ep = std::__1::default_delete<Node>]
+  template <class _Up, class _Ep> unique_ptr(unique_ptr<_Up, _Ep>&);
+                                  ^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/memory:2540:3: note: candidate constructor not viable: requires 0 arguments, but 1 was provided
+  unique_ptr() : __ptr_(pointer())
+  ^
+/Library/Developer/CommandLineTools/usr/include/c++/v1/memory:2585:3: note: candidate constructor not viable: requires 2 arguments, but 1 was provided
+  unique_ptr(pointer __p, deleter_type __d)
+  ^
+17 warnings and 16 errors generated.
